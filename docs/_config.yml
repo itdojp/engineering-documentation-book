@@ -1,0 +1,22 @@
+title: エンジニアリング・ドキュメンテーション実務（仮）
+description: 実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。
+author: 株式会社アイティードゥ
+lang: ja
+url: https://itdojp.github.io
+baseurl: /engineering-documentation-book
+repository: https://github.com/itdojp/engineering-documentation-book
+markdown: kramdown
+highlighter: rouge
+plugins:
+- jekyll-feed
+- jekyll-sitemap
+- jekyll-seo-tag
+- jekyll-relative-links
+- jekyll-optional-front-matter
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: book
+permalink: pretty
+license_text: CC BY-NC-SA 4.0

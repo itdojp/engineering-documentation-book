@@ -1,0 +1,72 @@
+{
+  "title": "エンジニアリング・ドキュメンテーション実務（仮）",
+  "description": "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。",
+  "author": "株式会社アイティードゥ",
+  "version": "0.1.0",
+  "structure": {
+    "chapters": [
+      {
+        "id": "chapter-01",
+        "title": "第1章：実務ドキュメントの全体像（目的別・成果物別マップ）"
+      },
+      {
+        "id": "chapter-02",
+        "title": "第2章：読者と目的から逆算する（Who/Why/What）"
+      },
+      {
+        "id": "chapter-03",
+        "title": "第3章：情報設計（前提/用語/粒度/スコープ境界）"
+      },
+      {
+        "id": "chapter-04",
+        "title": "第4章：技術文体（曖昧さ排除・手順の書き方・例外系）"
+      },
+      {
+        "id": "chapter-05",
+        "title": "第5章：図解（構成図/フロー/シーケンスの最小セット）"
+      },
+      {
+        "id": "chapter-06",
+        "title": "第6章：手順書（実行前提/検証/ロールバック/リスク）"
+      },
+      {
+        "id": "chapter-07",
+        "title": "第7章：Runbook（平常時/異常時/エスカレーション）"
+      },
+      {
+        "id": "chapter-08",
+        "title": "第8章：ADR（意思決定記録：背景→選択肢→決定→影響）"
+      },
+      {
+        "id": "chapter-09",
+        "title": "第9章：障害報告・ポストモーテム（タイムライン/真因/再発防止）"
+      },
+      {
+        "id": "chapter-10",
+        "title": "第10章：Docs-as-Code運用（レビュー/版管理/CI/公開）"
+      },
+      {
+        "id": "chapter-11",
+        "title": "第11章：ドキュメント品質の守り方（陳腐化対策/Owner/KPI）"
+      }
+    ],
+    "appendices": [
+      {
+        "id": "templates",
+        "title": "テンプレ集"
+      },
+      {
+        "id": "checklists",
+        "title": "チェックリスト集"
+      },
+      {
+        "id": "references",
+        "title": "参考文献"
+      },
+      {
+        "id": "glossary",
+        "title": "用語集"
+      }
+    ]
+  }
+}
