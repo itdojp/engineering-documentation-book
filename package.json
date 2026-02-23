@@ -4,8 +4,8 @@
   "private": true,
   "description": "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。",
   "scripts": {
-    "start": "bundle exec jekyll serve --livereload --source docs --config docs/_config.yml",
-    "build": "bundle exec jekyll build --source docs --config docs/_config.yml",
+    "start": "bash scripts/jekyll.sh serve",
+    "build": "bash scripts/jekyll.sh build",
     "test": "npm run lint && npm run check-links",
     "lint": "markdownlint -c .markdownlint.json \"docs/**/*.md\"",
     "check-links": "find docs -name '*.md' -print0 | xargs -0 -n 1 markdown-link-check -c .markdown-link-check.json",
