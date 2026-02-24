@@ -10,6 +10,36 @@ order: 902
 
 ## コピペ用テンプレ
 
+```mermaid
+flowchart LR
+  %% 境界（社外/社内、VPC 等）
+  subgraph Internet["社外（インターネット）"]
+    User[利用者]
+  end
+
+  subgraph VPC["社内（VPC）"]
+    Edge[入口（LB/API Gateway）]
+    App[アプリ]
+    Auth[認証/認可]
+    DB[(DB)]
+    Log[ログ]
+  end
+
+  subgraph Observability["監視/ログ基盤"]
+    SIEM[ログ集約]
+  end
+
+  %% 通信/データの流れ
+  User -->|HTTPS| Edge
+  Edge --> App
+  App -->|認証/認可| Auth
+  App --> DB
+  App --> Log
+  Log --> SIEM
+
+  %% TODO: 責任分界（誰がどこまで）、例外系（障害時/認証失敗時）を注記する
+```
+
 ## 図（例）
 
 ```mermaid
