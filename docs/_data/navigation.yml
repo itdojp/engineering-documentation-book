@@ -1,0 +1,36 @@
+# Book-formatter compliant navigation structure
+
+chapters:
+  - title: "第1章：実務ドキュメントの全体像（目的別・成果物別マップ）"
+    path: "/chapters/chapter-01/"
+  - title: "第2章：読者と目的から逆算する（Who/Why/What）"
+    path: "/chapters/chapter-02/"
+  - title: "第3章：情報設計（前提/用語/粒度/スコープ境界）"
+    path: "/chapters/chapter-03/"
+  - title: "第4章：技術文体（曖昧さ排除・手順の書き方・例外系）"
+    path: "/chapters/chapter-04/"
+  - title: "第5章：図解（構成図/フロー/シーケンスの最小セット）"
+    path: "/chapters/chapter-05/"
+  - title: "第6章：手順書（実行前提/検証/ロールバック/リスク）"
+    path: "/chapters/chapter-06/"
+  - title: "第7章：Runbook（平常時/異常時/エスカレーション）"
+    path: "/chapters/chapter-07/"
+  - title: "第8章：ADR（意思決定記録：背景→選択肢→決定→影響）"
+    path: "/chapters/chapter-08/"
+  - title: "第9章：障害報告・ポストモーテム（タイムライン/真因/再発防止）"
+    path: "/chapters/chapter-09/"
+  - title: "第10章：Docs-as-Code運用（レビュー/版管理/CI/公開）"
+    path: "/chapters/chapter-10/"
+  - title: "第11章：ドキュメント品質の守り方（陳腐化対策/Owner/KPI）"
+    path: "/chapters/chapter-11/"
+
+appendices:
+  - title: "テンプレ集"
+    path: "/appendices/templates/"
+  - title: "チェックリスト集"
+    path: "/appendices/checklists/"
+  - title: "参考文献"
+    path: "/appendices/references/"
+  - title: "用語集"
+    path: "/appendices/glossary/"
+
