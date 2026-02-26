@@ -34,7 +34,7 @@ CIは“本文の正しさ”までは保証できないが、最低限の破綻
 ### 最小CI例（コピペ）
 
 - 最小は「lint + link check」を pull_request で必ず回す
-- 付録: [最小CIテンプレ（markdownlint + link check）]({{ '/appendices/templates/ci-minimum/' | relative_url }})
+- 付録: [最小CIテンプレ（markdownlint + link check）](../../appendices/templates/ci-minimum/)
 
 ```yaml
 name: docs-quality-gate
