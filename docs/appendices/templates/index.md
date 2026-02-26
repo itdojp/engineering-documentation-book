@@ -24,3 +24,4 @@ order: 900
 - [変更記録（ChangeLog）テンプレ](changelog/)
 - [障害報告テンプレ](incident-report/)
 - [ポストモーテムテンプレ](postmortem/)
+- [最小CIテンプレ（markdownlint + link check）](ci-minimum/)
