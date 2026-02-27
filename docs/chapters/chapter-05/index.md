@@ -38,14 +38,32 @@ order: 50
 
 ### 良い例
 
-最小構成図（例）
+以下は同一の架空システム（MiniShop）を前提にした例です。
+
+#### 構成図（最小）
 
 ```mermaid
 flowchart LR
-  User[利用者] -->|HTTPS| App[アプリ]
-  App --> DB[(DB)]
-  App --> Log[ログ]
-  Log --> SIEM[集約]
+  subgraph Internet[インターネット]
+    User[利用者]
+  end
+
+  subgraph VPC[社内/VPC]
+    Web[Webフロント]
+    API[Orders API]
+    DB[(DB)]
+    Obs[ログ/メトリクス]
+  end
+
+  subgraph External[社外]
+    Pay[決済プロバイダ]
+  end
+
+  User -->|HTTPS| Web
+  Web -->|HTTPS| API
+  API --> DB
+  API -->|HTTPS| Pay
+  API --> Obs
 ```
 
 注釈（最低限）:
@@ -53,6 +71,42 @@ flowchart LR
 - 境界（社内/社外、VPC 等）
 - 認証点（どこで認証/認可するか）
 - ログ出口（どこへ送るか、マスキング方針）
+
+#### フロー（最小）
+
+```mermaid
+flowchart TD
+  A[注文確定] --> B[入力検証]
+  B -->|OK| C[決済リクエスト]
+  B -->|NG| E[エラー表示（項目別）]
+  C -->|成功| D[注文確定（DB保存）]
+  C -->|失敗/timeout| F[再試行案内 or 失敗通知]
+```
+
+#### シーケンス（最小）
+
+```mermaid
+sequenceDiagram
+  actor U as User
+  participant W as Webフロント
+  participant A as Orders API
+  participant P as 決済プロバイダ
+  participant D as DB
+
+  U->>W: 注文確定
+  W->>A: POST /orders（x-request-id）
+  A->>P: authorize(...)
+  alt success
+    P-->>A: approved
+    A->>D: insert order
+    A-->>W: 201 Created
+    W-->>U: 完了画面
+  else timeout/failed
+    P--x A: timeout/failed
+    A-->>W: 504（retryable）
+    W-->>U: 再試行案内
+  end
+```
 
 ### Mermaid の表示方針
 

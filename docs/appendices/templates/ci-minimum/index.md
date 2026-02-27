@@ -35,6 +35,52 @@ jobs:
         run: npm test
 ```
 
+## 最小構成（`npm test` を成立させる例）
+
+### `package.json`（例）
+
+```json
+{
+  "name": "docs-quality-gate",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint && npm run check-links",
+    "lint": "markdownlint -c .markdownlint.json \"docs/**/*.md\"",
+    "check-links": "find docs -name '*.md' -print0 | xargs -0 -n 1 markdown-link-check -c .markdown-link-check.json"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.45.0",
+    "markdown-link-check": "^3.13.7"
+  }
+}
+```
+
+### `.markdownlint.json`（例）
+
+```json
+{
+  "default": true,
+  "MD013": false,
+  "MD024": { "siblings_only": true }
+}
+```
+
+### `.markdown-link-check.json`（例）
+
+外部サイトの制限（403/429）や一時的な不安定さでCIが落ちる場合は、必要最小限の ignore を入れて運用する。
+
+```json
+{
+  "timeout": 10,
+  "retryOn429": true,
+  "retryCount": 2,
+  "ignorePatterns": [
+    { "pattern": "^https://twitter\\.com/" },
+    { "pattern": "^https://www\\.linkedin\\.com/" }
+  ]
+}
+```
+
 ## ローカル実行
 
 ```bash
