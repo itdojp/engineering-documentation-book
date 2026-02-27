@@ -102,7 +102,7 @@ sequenceDiagram
     A-->>W: 201 Created
     W-->>U: 完了画面
   else timeout/failed
-    P--x A: timeout/failed
+    P--xA: timeout/failed
     A-->>W: 504（retryable）
     W-->>U: 再試行案内
   end

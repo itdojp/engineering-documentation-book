@@ -71,7 +71,7 @@ jobs:
 
 ```json
 {
-  "timeout": 10,
+  "timeout": "10s",
   "retryOn429": true,
   "retryCount": 2,
   "ignorePatterns": [
