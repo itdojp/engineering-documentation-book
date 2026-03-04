@@ -12,7 +12,7 @@ order: 902
 
 ```mermaid
 flowchart LR
-  %% 境界（社外/社内、VPC 等）
+  %% 境界（社外/社内、VPCなど）
   subgraph Internet["社外（インターネット）"]
     User[利用者]
   end
