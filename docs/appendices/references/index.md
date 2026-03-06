@@ -8,7 +8,7 @@ order: 920
 
 ## 標準・仕様（一次情報）
 
-- [RFC 2119: Key words for use in RFCs to Indicate Requirement Levels](https://www.rfc-editor.org/rfc/rfc2119) - MUST/SHOULD 等の要件レベル
+- [RFC 2119: Key words for use in RFCs to Indicate Requirement Levels](https://www.rfc-editor.org/rfc/rfc2119) - MUST/SHOULD などの要件レベル
 - [RFC 3339: Date and Time on the Internet: Timestamps](https://www.rfc-editor.org/rfc/rfc3339) - 日時表記（タイムゾーン含む）
 - [Semantic Versioning 2.0.0](https://semver.org/) - バージョニング規約
 - [Keep a Changelog](https://keepachangelog.com/ja/1.1.0/) - CHANGELOG の推奨書式
@@ -24,7 +24,7 @@ order: 920
 
 - [Google SRE Book: Managing Incidents](https://sre.google/sre-book/managing-incidents/) - インシデント運用の基本
 - [Google SRE Book: Postmortem](https://sre.google/sre-book/postmortem/) - 責任追及しない振り返り
-- [The Twelve-Factor App](https://12factor.net/) - 運用前提のアプリ設計（設定/ログ等）
+- [The Twelve-Factor App](https://12factor.net/) - 運用前提のアプリ設計（設定/ログなど）
 
 ## ADR / 設計記録
 
