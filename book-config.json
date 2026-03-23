@@ -3,6 +3,32 @@
   "description": "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。",
   "author": "株式会社アイティードゥ",
   "version": "0.1.0",
+  "metadata": {
+    "genre": "技術書 / 実務ドキュメンテーション",
+    "target_audience": [
+      "README/手順書/Runbook/ADR/ポストモーテムを初めて体系化する初級〜中級エンジニア",
+      "レビュー観点を揃えたいテックリード/EM",
+      "Docs-as-Code を導入したい開発チーム"
+    ],
+    "readerProfile": [
+      "実務ドキュメントの作成経験が浅いが、最小限で運用可能な品質を整えたい",
+      "既存文書の改善余地を見つけて、レビュー観点を明確化したい"
+    ],
+    "learningOutcomes": [
+      "Who/Why/What を短文で定義できる",
+      "成果物ごとに必要な情報粒度と例外系を判断できる",
+      "図解テンプレと文書テンプレを再利用できる"
+    ],
+    "keywords": [
+      "ドキュメンテーション",
+      "README",
+      "手順書",
+      "Runbook",
+      "ADR",
+      "ポストモーテム",
+      "Docs-as-Code"
+    ]
+  },
   "structure": {
     "chapters": [
       {
