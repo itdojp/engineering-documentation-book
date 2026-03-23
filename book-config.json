@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "metadata": {
     "genre": "技術書 / 実務ドキュメンテーション",
-    "target_audience": [
+    "targetAudience": [
       "README/手順書/Runbook/ADR/ポストモーテムを初めて体系化する初級〜中級エンジニア",
       "レビュー観点を揃えたいテックリード/EM",
       "Docs-as-Code を導入したい開発チーム"
