@@ -74,3 +74,9 @@ learningOutcomes:
 - [チェックリスト集](appendices/checklists/)
 - [参考文献](appendices/references/)
 - [用語集](appendices/glossary/)
+
+## 利用と更新情報
+
+- ライセンス: CC BY-NC-SA 4.0（商用利用は別契約）
+- リポジトリ: [itdojp/engineering-documentation-book](https://github.com/itdojp/engineering-documentation-book)
+- 更新差分を追う場合は、GitHub のコミット履歴と Pull Request を参照する
