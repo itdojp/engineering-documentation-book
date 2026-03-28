@@ -39,7 +39,7 @@ learningOutcomes:
 ## 前提知識
 
 - Markdown の基本
-- Git/GitHub の基本（Issue/PR）
+- Git/GitHub の基本（Issue / PR）
 
 ## すぐ開く先
 
@@ -74,3 +74,10 @@ learningOutcomes:
 - [チェックリスト集](appendices/checklists/)
 - [参考文献](appendices/references/)
 - [用語集](appendices/glossary/)
+
+## 利用と更新情報
+
+- ライセンス: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)（このライセンスでは商用利用は許諾されないため、商用利用は別途許諾が必要）
+- 詳細なライセンス条件: [LICENSE.md](https://github.com/itdojp/engineering-documentation-book/blob/main/LICENSE.md)
+- リポジトリ: [itdojp/engineering-documentation-book](https://github.com/itdojp/engineering-documentation-book)
+- 更新差分を追う場合は、GitHub の [コミット履歴](https://github.com/itdojp/engineering-documentation-book/commits/main/) と [PR 一覧](https://github.com/itdojp/engineering-documentation-book/pulls) を参照する
