@@ -39,7 +39,7 @@ learningOutcomes:
 ## 前提知識
 
 - Markdown の基本
-- Git/GitHub の基本（Issue/PR）
+- Git/GitHub の基本（Issue / PR）
 
 ## すぐ開く先
 
