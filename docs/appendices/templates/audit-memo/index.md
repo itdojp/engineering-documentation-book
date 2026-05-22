@@ -1,7 +1,7 @@
 ---
 title: "監査メモテンプレ"
 layout: book
-order: 906
+order: 906.5
 ---
 
 # 監査メモテンプレ
