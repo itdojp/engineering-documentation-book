@@ -34,6 +34,7 @@ order: 900
 - [手順書テンプレ](procedure/)
 - [Runbook テンプレ](runbook/)
 - [ADR テンプレ](adr/)
+- [監査メモテンプレ](audit-memo/)
 - [変更記録（ChangeLog）テンプレ](changelog/)
 - [障害報告テンプレ](incident-report/)
 - [ポストモーテムテンプレ](postmortem/)
