@@ -10,6 +10,7 @@ order: 930
 - Docs-as-Code: ドキュメントをコードと同様に版管理・レビュー・CI で運用する考え方
 - IC: Incident Commander（インシデントコマンダー）
 - Owner: 更新責任者（ドキュメントの棚卸し・更新を担う担当）
+- 監査メモ: 確認範囲、根拠、変更判断、変更不要判断、再確認条件を残す記録
 - Runbook: 異常時を含む運用手順書
 - SLI: Service Level Indicator（サービスレベル指標）
 - SLO: Service Level Objective（サービスレベル目標）
