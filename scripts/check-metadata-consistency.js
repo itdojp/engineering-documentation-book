@@ -117,6 +117,37 @@ function expectFile(file) {
   return true;
 }
 
+function parseGitHubRepositoryUrl(value, label, options = {}) {
+  const { recordError = true } = options;
+  if (typeof value !== 'string' || !value.trim()) {
+    if (recordError) {
+      errors.push(`${label}: expected a non-empty GitHub repository URL`);
+    }
+    return null;
+  }
+
+  try {
+    const parsed = new URL(value.trim().replace(/\.git$/, ''));
+    const [owner, repo, ...rest] = parsed.pathname.replace(/^\//, '').split('/');
+    if (parsed.hostname !== 'github.com' || !owner || !repo || rest.length) {
+      if (recordError) {
+        errors.push(`${label}: expected https://github.com/<owner>/<repo>[.git], got ${JSON.stringify(value)}`);
+      }
+      return null;
+    }
+    return {
+      owner,
+      repo,
+      url: `https://github.com/${owner}/${repo}`,
+    };
+  } catch (error) {
+    if (recordError) {
+      errors.push(`${label}: expected a valid URL, got ${JSON.stringify(value)} (${error.message})`);
+    }
+    return null;
+  }
+}
+
 const bookConfig = readJson('book-config.json');
 const pkg = readJson('package.json');
 const lock = readJson('package-lock.json');
@@ -125,10 +156,17 @@ const docsConfig = parseYamlScalars(readText('docs/_config.yml'));
 const docsIndex = parseFrontMatter('docs/index.md');
 const navigationText = readText('docs/_data/navigation.yml');
 
-const repositoryUrl = new URL(pkg.repository.url.replace(/\.git$/, ''));
-const [owner, repo] = repositoryUrl.pathname.replace(/^\//, '').split('/');
-const pagesUrl = `https://${owner}.github.io/${repo}/`;
+const packageRepositoryInfo = parseGitHubRepositoryUrl(
+  pkg.repository && pkg.repository.url,
+  'package.json repository.url'
+);
+const fallbackRepositoryInfo = packageRepositoryInfo ||
+  parseGitHubRepositoryUrl(rootConfig.repository, '_config.yml repository', { recordError: false }) ||
+  parseGitHubRepositoryUrl(docsConfig.repository, 'docs/_config.yml repository', { recordError: false });
+const owner = fallbackRepositoryInfo ? fallbackRepositoryInfo.owner : 'itdojp';
+const repo = fallbackRepositoryInfo ? fallbackRepositoryInfo.repo : (pkg.name || 'engineering-documentation-book');
 const repoUrl = `https://github.com/${owner}/${repo}`;
+const pagesUrl = `https://${owner}.github.io/${repo}/`;
 const issuesUrl = `${repoUrl}/issues`;
 const baseurl = `/${repo}`;
 
