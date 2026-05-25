@@ -1,6 +1,8 @@
 ---
 title: "エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム"
-description: "未経験〜初級が、実務で求められるドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム）を作成できる状態にする。"
+description: "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。"
+author: "株式会社アイティードゥ"
+version: "0.1.0"
 layout: book
 order: 0
 readerProfile:

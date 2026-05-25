@@ -30,9 +30,16 @@ npm start
 # ビルド
 npm run build
 
-# テスト（markdown lint / link check）
+# メタデータ整合性チェック
+npm run check:metadata
+
+# テスト（metadata / markdown lint / link check）
 npm test
 ```
+
+### 品質ゲート
+
+`npm run check:metadata` は、`book-config.json` / `package.json` / `package-lock.json` / Jekyll 設定 / `docs/index.md` / ナビゲーションのタイトル・説明・版数・公開 URL がずれていないことを検証します。
 
 ## ライセンス
 
