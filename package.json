@@ -2,7 +2,7 @@
   "name": "engineering-documentation-book",
   "version": "0.1.0",
   "private": true,
-  "description": "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。",
+  "description": "実務で使える技術ドキュメント成果物（README / 手順書 / Runbook / ADR / 障害報告・ポストモーテム等）の設計と運用を扱う。",
   "scripts": {
     "start": "bash scripts/jekyll.sh serve",
     "build": "bash scripts/jekyll.sh build",
@@ -25,5 +25,14 @@
   "homepage": "https://itdojp.github.io/engineering-documentation-book/",
   "bugs": {
     "url": "https://github.com/itdojp/engineering-documentation-book/issues"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "overrides": {
+    "js-yaml": "4.3.0",
+    "markdown-it": "14.2.0",
+    "linkify-it": "5.0.1",
+    "undici": "7.28.0"
   }
 }

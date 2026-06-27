@@ -13,7 +13,7 @@ flowchart LR
   end
 
   subgraph VPC[社内/VPC]
-    Web[Webフロント]
+    Web[Web フロント]
     API[Orders API]
     DB[(DB)]
     Obs[ログ/メトリクス]
@@ -32,6 +32,6 @@ flowchart LR
 
 ## 注釈（最低限）
 
-- 境界: VPC内（Web/API/DB/観測）と社外（決済プロバイダ）を分ける
-- 認証点: Web→API はセッション/トークンで認可（例）。外部決済はAPIキーを利用（値は保持しない）
+- 境界: VPC 内（Web / API / DB / 観測）と社外（決済プロバイダ）を分ける
+- 認証点: Web→API はセッション/トークンで認可（例）。外部決済は API キーを利用（値は保持しない）
 - ログ出口: API から観測基盤へ送る。request-id は残すが、秘密情報/個人情報はマスキングする

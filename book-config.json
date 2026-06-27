@@ -1,12 +1,12 @@
 {
   "title": "エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム",
-  "description": "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。",
+  "description": "実務で使える技術ドキュメント成果物（README / 手順書 / Runbook / ADR / 障害報告・ポストモーテム等）の設計と運用を扱う。",
   "author": "株式会社アイティードゥ",
   "version": "0.1.0",
   "metadata": {
     "genre": "技術書 / 実務ドキュメンテーション",
     "targetAudience": [
-      "README/手順書/Runbook/ADR/ポストモーテムを初めて体系化する初級〜中級エンジニア",
+      "README / 手順書 / Runbook / ADR / ポストモーテムを初めて体系化する初級〜中級エンジニア",
       "レビュー観点を揃えたいテックリード/EM",
       "Docs-as-Code を導入したい開発チーム"
     ],
@@ -63,7 +63,7 @@
       },
       {
         "id": "chapter-07",
-        "title": "第7章：Runbook（平常時/異常時/エスカレーション）"
+        "title": "第7章：Runbook（平常時 / 異常時 / エスカレーション）"
       },
       {
         "id": "chapter-08",
@@ -71,15 +71,15 @@
       },
       {
         "id": "chapter-09",
-        "title": "第9章：障害報告・ポストモーテム（タイムライン/真因/再発防止）"
+        "title": "第9章：障害報告・ポストモーテム（タイムライン / 真因 / 再発防止）"
       },
       {
         "id": "chapter-10",
-        "title": "第10章：Docs-as-Code運用（レビュー/版管理/CI/公開）"
+        "title": "第10章：Docs-as-Code 運用（レビュー / 版管理 / CI / 公開）"
       },
       {
         "id": "chapter-11",
-        "title": "第11章：ドキュメント品質の守り方（陳腐化対策/Owner/KPI）"
+        "title": "第11章：ドキュメント品質の守り方（陳腐化対策 / Owner / KPI）"
       }
     ],
     "appendices": [

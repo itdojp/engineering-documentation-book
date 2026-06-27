@@ -1,12 +1,12 @@
 ---
-title: "最小CIテンプレ（markdownlint + link check）"
+title: "最小 CI テンプレ（markdownlint + link check）"
 layout: book
 order: 909
 ---
 
-# 最小CIテンプレ（markdownlint + link check）
+# 最小 CI テンプレ（markdownlint + link check）
 
-Docs-as-Code の最小CIは「形式チェック（lint）」と「リンク切れ検出」を自動化し、レビュー前に破綻を止めることです。
+Docs-as-Code の最小 CI は「形式チェック（lint）」と「リンク切れ検出」を自動化し、レビュー前に破綻を止めることです。
 
 本リポジトリでは `npm test` が `markdownlint` と `markdown-link-check` を実行する想定です。
 
@@ -67,7 +67,7 @@ jobs:
 
 ### `.markdown-link-check.json`（例）
 
-外部サイトの制限（403/429）や一時的な不安定さでCIが落ちる場合は、必要最小限の ignore を入れて運用する。
+外部サイトの制限（403/429）や一時的な不安定さで CI が落ちる場合は、必要最小限の ignore を入れて運用する。
 
 ```json
 {

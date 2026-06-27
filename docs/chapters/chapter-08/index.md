@@ -15,7 +15,7 @@ order: 80
 
 ## この章の成果物（または判断基準）
 
-- ADR（付録テンプレ: [ADRテンプレ](../../appendices/templates/adr/)）
+- ADR（付録テンプレ: [ADR テンプレ](../../appendices/templates/adr/)）
 - 判断の根拠と影響範囲
 
 ## 本文
@@ -24,7 +24,7 @@ order: 80
 
 ### テンプレ
 
-- 付録: [ADRテンプレ](../../appendices/templates/adr/)
+- 付録: [ADR テンプレ](../../appendices/templates/adr/)
 
 ### 記入例（要点）
 
@@ -56,7 +56,7 @@ order: 80
 
 ```md
 背景: 誤検知が多く一次対応が逼迫
-選択肢: A=閾値調整 / B=SLI再設計
+選択肢: A=閾値調整 / B=SLI 再設計
 決定: B（説明責任と誤検知削減）
 影響: ダッシュボード/アラート定義変更
 移行: 段階導入、失敗時は旧定義へ戻す

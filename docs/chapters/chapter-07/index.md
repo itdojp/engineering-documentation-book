@@ -1,10 +1,10 @@
 ---
-title: "第7章：Runbook（平常時/異常時/エスカレーション）"
+title: "第7章：Runbook（平常時 / 異常時 / エスカレーション）"
 layout: book
 order: 70
 ---
 
-# 第7章：Runbook（平常時/異常時/エスカレーション）
+# 第7章：Runbook（平常時 / 異常時 / エスカレーション）
 
 ## この章で学ぶこと
 
@@ -15,7 +15,7 @@ order: 70
 
 ## この章の成果物（または判断基準）
 
-- Runbook（付録テンプレ: [Runbookテンプレ](../../appendices/templates/runbook/)）
+- Runbook（付録テンプレ: [Runbook テンプレ](../../appendices/templates/runbook/)）
 - 異常時の切り分け手順とエスカレーション基準
 
 ## 本文
@@ -24,7 +24,7 @@ order: 70
 
 ### テンプレ
 
-- 付録: [Runbookテンプレ](../../appendices/templates/runbook/)
+- 付録: [Runbook テンプレ](../../appendices/templates/runbook/)
 
 ### 記入例（要点）
 

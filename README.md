@@ -2,9 +2,9 @@
 
 ## 概要
 
-実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。
+実務で使える技術ドキュメント成果物（README / 手順書 / Runbook / ADR / 障害報告・ポストモーテム等）の設計と運用を扱う。
 
-## オンライン版（公開URL）
+## オンライン版（公開 URL）
 
 - GitHub Pages: `https://itdojp.github.io/engineering-documentation-book/`
 - 入口: `docs/index.md`
