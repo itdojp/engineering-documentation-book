@@ -12,7 +12,7 @@ order: 902
 
 ```mermaid
 flowchart LR
-  %% 境界（社外/社内、VPCなど）
+  %% 境界（社外/社内、VPC など）
   subgraph Internet["社外（インターネット）"]
     User[利用者]
   end
@@ -51,7 +51,7 @@ flowchart LR
   end
   App --> Log
 
-  %% 注釈: 重要な境界（社内/社外、VPC/インターネット）を明示する
+  %% 注釈: 重要な境界（社内/社外、VPC / インターネット）を明示する
 ```
 
 ## 補足（記載観点）

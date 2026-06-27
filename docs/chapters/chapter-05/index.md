@@ -27,7 +27,7 @@ order: 50
 - フロー: どの順に処理が流れるか
 - シーケンス: 誰が誰に何を送るか
 
-図には「境界（社内/社外、VPCなど）」を必ず入れる。
+図には「境界（社内/社外、VPC など）」を必ず入れる。
 
 ## 具体例（悪い例→良い例）
 
@@ -49,7 +49,7 @@ flowchart LR
   end
 
   subgraph VPC[社内/VPC]
-    Web[Webフロント]
+    Web[Web フロント]
     API[Orders API]
     DB[(DB)]
     Obs[ログ/メトリクス]
@@ -68,7 +68,7 @@ flowchart LR
 
 注釈（最低限）:
 
-- 境界（社内/社外、VPCなど）
+- 境界（社内/社外、VPC など）
 - 認証点（どこで認証/認可するか）
 - ログ出口（どこへ送るか、マスキング方針）
 
@@ -79,7 +79,7 @@ flowchart TD
   A[注文確定] --> B[入力検証]
   B -->|OK| C[決済リクエスト]
   B -->|NG| E[エラー表示（項目別）]
-  C -->|成功| D[注文確定（DB保存）]
+  C -->|成功| D[注文確定（DB 保存）]
   C -->|失敗/timeout| F[再試行案内 or 失敗通知]
 ```
 
@@ -88,7 +88,7 @@ flowchart TD
 ```mermaid
 sequenceDiagram
   actor U as User
-  participant W as Webフロント
+  participant W as Web フロント
   participant A as Orders API
   participant P as 決済プロバイダ
   participant D as DB

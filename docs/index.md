@@ -1,12 +1,12 @@
 ---
 title: "エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム"
-description: "実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱う。"
+description: "実務で使える技術ドキュメント成果物（README / 手順書 / Runbook / ADR / 障害報告・ポストモーテム等）の設計と運用を扱う。"
 author: "株式会社アイティードゥ"
 version: "0.1.0"
 layout: book
 order: 0
 readerProfile:
-  - "README/手順書/Runbook/ADR/ポストモーテムを体系的に整えたい初級〜中級エンジニア"
+  - "README / 手順書 / Runbook / ADR / ポストモーテムを体系的に整えたい初級〜中級エンジニア"
   - "レビュー観点を揃えたいテックリード/EM"
   - "Docs-as-Code を導入したい開発チーム"
 learningOutcomes:
@@ -19,11 +19,11 @@ learningOutcomes:
 
 # エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム
 
-実務で使える技術ドキュメント成果物（README/手順書/Runbook/ADR/障害報告・ポストモーテム等）の設計と運用を扱うガイドです。未経験〜初級の読者が、必要な成果物を作成し、レビューと保守に組み込める状態を目指します。
+実務で使える技術ドキュメント成果物（README / 手順書 / Runbook / ADR / 障害報告・ポストモーテム等）の設計と運用を扱うガイドです。未経験〜初級の読者が、必要な成果物を作成し、レビューと保守に組み込める状態を目指します。
 
 ## 想定読者
 
-- README/手順書/Runbook/ADR/ポストモーテムを体系的に整えたい初級〜中級エンジニア
+- README / 手順書 / Runbook / ADR / ポストモーテムを体系的に整えたい初級〜中級エンジニア
 - レビュー観点を揃えたいテックリード/EM
 - Docs-as-Code を導入したい開発チーム
 
@@ -70,11 +70,11 @@ learningOutcomes:
 - [第4章: 技術文体（曖昧さ排除・手順の書き方・例外系）](chapters/chapter-04/)
 - [第5章: 図解（構成図/フロー/シーケンスの最小セット）](chapters/chapter-05/)
 - [第6章: 手順書（実行前提/検証/ロールバック/リスク）](chapters/chapter-06/)
-- [第7章: Runbook（平常時/異常時/エスカレーション）](chapters/chapter-07/)
+- [第7章: Runbook（平常時 / 異常時 / エスカレーション）](chapters/chapter-07/)
 - [第8章: ADR（意思決定記録：背景→選択肢→決定→影響）](chapters/chapter-08/)
-- [第9章: 障害報告・ポストモーテム（タイムライン/真因/再発防止）](chapters/chapter-09/)
-- [第10章: Docs-as-Code運用（レビュー/版管理/CI/公開）](chapters/chapter-10/)
-- [第11章: ドキュメント品質の守り方（陳腐化対策/Owner/KPI）](chapters/chapter-11/)
+- [第9章: 障害報告・ポストモーテム（タイムライン / 真因 / 再発防止）](chapters/chapter-09/)
+- [第10章: Docs-as-Code 運用（レビュー / 版管理 / CI / 公開）](chapters/chapter-10/)
+- [第11章: ドキュメント品質の守り方（陳腐化対策 / Owner / KPI）](chapters/chapter-11/)
 
 ## 付録
 
