@@ -42,6 +42,7 @@ const cases = [
   ['missing SVG accessibility', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('role="img"', 'role="presentation"'); }],
   ['misnamed root SVG label attribute', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('aria-labelledby=', 'data-aria-labelledby='); }],
   ['protocol-relative SVG resource', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('</svg>', '<a href="//example.invalid/figure"><text>external</text></a></svg>'); }],
+  ['relative SVG resource', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('</svg>', '<use href="other.svg#shape"/></svg>'); }],
   ['hard-coded Pages baseurl', 'docs/appendices/figure-index/index.md', function (text) { return text.replace('../../chapters/chapter-05/', '/engineering-documentation-book/chapters/chapter-05/'); }],
   ['broken mobile rule', 'docs/assets/css/mobile-responsive.css', function (text) { return text.replace(/\.figure-index-list\s+li\s*\{\s*padding:\s*0\.75rem;/, '.broken-index li {\n    padding: 0.75rem;'); }],
   ['broken sidebar renderer', 'docs/_includes/sidebar-nav.html', function (text) { return text.replaceAll('navigation.appendices', 'navigation.resources_only'); }],
