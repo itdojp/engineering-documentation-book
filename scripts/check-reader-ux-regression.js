@@ -10,11 +10,17 @@ const SCRATCH_ROOT = path.join(ROOT, '.codex-local', 'tmp');
 fs.mkdirSync(SCRATCH_ROOT, { recursive: true });
 const RUN_ROOT = fs.mkdtempSync(path.join(SCRATCH_ROOT, 'reader-ux-regression-run-'));
 
+function disableFigureIndex(text) {
+  const config = JSON.parse(text);
+  config.ux.modules.figureIndex = false;
+  return JSON.stringify(config, null, 2) + '\n';
+}
+
 const cases = [
-  ['missing module flag', 'book-config.json', function (text) { return text.replace('"figureIndex": true', '"figureIndex": false'); }],
+  ['missing module flag', 'book-config.json', disableFigureIndex],
   ['missing route source', 'docs/appendices/figure-index/index.md', function () { return null; }],
-  ['missing navigation route', 'docs/_data/navigation.yml', function (text) { return text.replace(/  - title: "図表索引"\r?\n    path: "\/appendices\/figure-index\/"\r?\n/, ''); }],
-  ['missing top route', 'docs/index.md', function (text) { return text.replace('- 公開図版から探す: [図表索引](appendices/figure-index/)\n', ''); }],
+  ['missing navigation route', 'docs/_data/navigation.yml', function (text) { return text.replace(/^\s*-\s*title:\s*["']図表索引["']\s*\r?\n\s*path:\s*["']\/appendices\/figure-index\/["']\s*\r?\n/m, ''); }],
+  ['missing top route', 'docs/index.md', function (text) { return text.replace(/^-\s*公開図版から探す:\s*\[図表索引\]\(appendices\/figure-index\/\)\s*\r?\n/m, ''); }],
   ['missing Mermaid source', 'docs/chapters/chapter-05/index.md', function (text) { return text.replace(String.fromCharCode(96).repeat(3) + 'mermaid', String.fromCharCode(96).repeat(3) + 'text'); }],
   ['missing figure reference', 'docs/chapters/chapter-05/index.md', function (text) { return text.replace('/assets/images/figures/ch05-order-flow.svg', '/assets/images/ch05-order-flow.svg'); }],
   ['missing stable anchor', 'docs/chapters/chapter-05/index.md', function (text) { return text.replace('id="figure-ch05-order-flow"', 'id="order-flow"'); }],
@@ -23,7 +29,7 @@ const cases = [
   ['extra figure asset', 'docs/assets/images/figures/extra.svg', function () { return '<svg xmlns="http://www.w3.org/2000/svg"></svg>'; }],
   ['missing SVG accessibility', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('role="img"', 'role="presentation"'); }],
   ['hard-coded Pages baseurl', 'docs/appendices/figure-index/index.md', function (text) { return text.replace('../../chapters/chapter-05/', '/engineering-documentation-book/chapters/chapter-05/'); }],
-  ['broken mobile rule', 'docs/assets/css/mobile-responsive.css', function (text) { return text.replace('.figure-index-list li {\n    padding: 0.75rem;', '.broken-index li {\n    padding: 0.75rem;'); }],
+  ['broken mobile rule', 'docs/assets/css/mobile-responsive.css', function (text) { return text.replace(/\.figure-index-list\s+li\s*\{\s*padding:\s*0\.75rem;/, '.broken-index li {\n    padding: 0.75rem;'); }],
   ['broken sidebar renderer', 'docs/_includes/sidebar-nav.html', function (text) { return text.replaceAll('navigation.appendices', 'navigation.resources_only'); }],
   ['broken prev-next renderer', 'docs/_includes/page-navigation.html', function (text) { return text.replace('additional,resources,appendices,afterword', 'additional,resources,afterword'); }]
 ];
