@@ -51,6 +51,7 @@ learningOutcomes:
 ## すぐ開く先
 
 - 図解の入口: [第5章: 図解（構成図/フロー/シーケンスの最小セット）](chapters/chapter-05/)
+- 公開図版から探す: [図表索引](appendices/figure-index/)
 - テンプレの入口: [テンプレ集](appendices/templates/)
 - 運用観点の入口: [チェックリスト集](appendices/checklists/)
 - 監査結果の入口: [監査メモテンプレ](appendices/templates/audit-memo/)
@@ -82,6 +83,7 @@ learningOutcomes:
 - [チェックリスト集](appendices/checklists/)
 - [参考文献](appendices/references/)
 - [用語集](appendices/glossary/)
+- [図表索引](appendices/figure-index/)
 
 ## 利用と更新情報
 

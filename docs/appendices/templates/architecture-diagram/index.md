@@ -38,6 +38,11 @@ flowchart LR
   Log --> SIEM
 ```
 
+<figure class="book-figure" id="figure-appendix-architecture-template">
+  <img src="../../../assets/images/figures/appendix-architecture-template.svg" alt="社外利用者から社内VPCの入口・アプリ・認証・DB・ログを経て監視基盤へ至る構成図テンプレート" loading="lazy">
+  <figcaption>図A-1: 構成図テンプレートのプレビュー。境界、認証、データ保管、ログ出口を配置する。</figcaption>
+</figure>
+
 ## 図（例）
 
 ```mermaid
@@ -53,6 +58,11 @@ flowchart LR
 
   %% 注釈: 重要な境界（社内/社外、VPC / インターネット）を明示する
 ```
+
+<figure class="book-figure" id="figure-appendix-architecture-example">
+  <img src="../../../assets/images/figures/appendix-architecture-example.svg" alt="利用者からアプリへ接続し、DB・Cache・ログ集約へ分岐する構成図の記入例" loading="lazy">
+  <figcaption>図A-2: 構成図テンプレートの記入例。主要な保管先と監視経路を最小要素で示す。</figcaption>
+</figure>
 
 ## 補足（記載観点）
 
