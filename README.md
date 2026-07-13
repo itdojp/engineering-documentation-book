@@ -33,7 +33,7 @@ npm run build
 # メタデータ整合性チェック
 npm run check:metadata
 
-# テスト（metadata / reader UX / markdown lint / link check）
+# テスト（metadata / reader UX + regression / markdown lint / link check）
 npm test
 
 # 依存関係の既知脆弱性を確認
