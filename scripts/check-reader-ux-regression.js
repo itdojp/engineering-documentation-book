@@ -16,8 +16,19 @@ function disableFigureIndex(text) {
   return JSON.stringify(config, null, 2) + '\n';
 }
 
+function removePositiveReaderUXGate(text) {
+  const pkg = JSON.parse(text);
+  pkg.scripts.test = String(pkg.scripts.test || '').split('&&').map(function (command) {
+    return command.trim();
+  }).filter(function (command) {
+    return command !== 'npm run check:reader-ux';
+  }).join(' && ');
+  return JSON.stringify(pkg, null, 2) + '\n';
+}
+
 const cases = [
-  ['missing module flag', 'book-config.json', disableFigureIndex],
+  ['disabled module flag', 'book-config.json', disableFigureIndex],
+  ['missing positive reader UX gate', 'package.json', removePositiveReaderUXGate],
   ['missing route source', 'docs/appendices/figure-index/index.md', function () { return null; }],
   ['missing navigation route', 'docs/_data/navigation.yml', function (text) { return text.replace(/^\s*-\s*title:\s*["']図表索引["']\s*\r?\n\s*path:\s*["']\/appendices\/figure-index\/["']\s*\r?\n/m, ''); }],
   ['missing top route', 'docs/index.md', function (text) { return text.replace(/^-\s*公開図版から探す:\s*\[図表索引\]\(appendices\/figure-index\/\)\s*\r?\n/m, ''); }],
@@ -29,6 +40,7 @@ const cases = [
   ['extra figure asset', 'docs/assets/images/figures/extra.svg', function () { return '<svg xmlns="http://www.w3.org/2000/svg"></svg>'; }],
   ['missing SVG accessibility', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('role="img"', 'role="presentation"'); }],
   ['misnamed root SVG label attribute', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('aria-labelledby=', 'data-aria-labelledby='); }],
+  ['protocol-relative SVG resource', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('</svg>', '<a href="//example.invalid/figure"><text>external</text></a></svg>'); }],
   ['hard-coded Pages baseurl', 'docs/appendices/figure-index/index.md', function (text) { return text.replace('../../chapters/chapter-05/', '/engineering-documentation-book/chapters/chapter-05/'); }],
   ['broken mobile rule', 'docs/assets/css/mobile-responsive.css', function (text) { return text.replace(/\.figure-index-list\s+li\s*\{\s*padding:\s*0\.75rem;/, '.broken-index li {\n    padding: 0.75rem;'); }],
   ['broken sidebar renderer', 'docs/_includes/sidebar-nav.html', function (text) { return text.replaceAll('navigation.appendices', 'navigation.resources_only'); }],
