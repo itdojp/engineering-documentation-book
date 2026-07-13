@@ -44,7 +44,7 @@ npm audit
 
 `npm run check:metadata` は、`book-config.json` / `package.json` / `package-lock.json` / Jekyll 設定 / `docs/index.md` / ナビゲーションのタイトル・説明・版数・公開 URL がずれていないことを検証します。
 
-`npm run check:reader-ux` は、公開 Mermaid 5件と SVG preview、stable anchor、図表索引、reader navigation の one-to-one 契約を検証します。`npm run check:reader-ux-regression` は、必須要素を壊した fixture を checker が制御された失敗として拒否することを検証します。
+`npm run check:reader-ux` は、公開 Mermaid 5件と SVG preview、stable anchor、図表索引、reader navigation の one-to-one 契約を検証します。`npm run check:reader-ux-regression` は、必須要素を壊したfixtureを制御された失敗として拒否し、標準名前空間付きの内部SVG fragmentを受理することを検証します。
 
 ## ライセンス
 
