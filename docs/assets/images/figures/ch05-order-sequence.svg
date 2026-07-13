@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title-ch05-order-sequence desc-ch05-order-sequence">
+  <title id="title-ch05-order-sequence">注文処理の最小シーケンス</title>
+  <desc id="desc-ch05-order-sequence">利用者、Webフロント、Orders API、決済プロバイダ、DBの五者間で、注文確定から成功応答またはタイムアウト応答までを上から下の時系列で示す。</desc>
+  <defs>
+    <marker id="arrow-ch05-order-sequence" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="960" height="640" fill="#ffffff"/>
+  <text x="40" y="40" fill="#0f172a" font-family="sans-serif" font-size="26" font-weight="700">注文処理の最小シーケンス</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g fill="#eff6ff" stroke="#2563eb" stroke-width="2">
+      <rect x="40" y="75" width="130" height="54" rx="9"/>
+      <rect x="225" y="75" width="130" height="54" rx="9"/>
+      <rect x="410" y="75" width="130" height="54" rx="9"/>
+      <rect x="595" y="75" width="130" height="54" rx="9"/>
+      <rect x="780" y="75" width="130" height="54" rx="9"/>
+    </g>
+    <g fill="#0f172a" font-size="16">
+      <text x="105" y="108">利用者</text>
+      <text x="290" y="98">Web</text><text x="290" y="118">フロント</text>
+      <text x="475" y="98">Orders</text><text x="475" y="118">API</text>
+      <text x="660" y="98">決済</text><text x="660" y="118">プロバイダ</text>
+      <text x="845" y="108">DB</text>
+    </g>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6">
+    <line x1="105" y1="129" x2="105" y2="605"/>
+    <line x1="290" y1="129" x2="290" y2="605"/>
+    <line x1="475" y1="129" x2="475" y2="605"/>
+    <line x1="660" y1="129" x2="660" y2="605"/>
+    <line x1="845" y1="129" x2="845" y2="605"/>
+  </g>
+  <g fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow-ch05-order-sequence)">
+    <path d="M105 175 H290"/>
+    <path d="M290 235 H475"/>
+    <path d="M475 295 H660"/>
+    <path d="M660 385 H475"/>
+    <path d="M475 445 H845"/>
+    <path d="M475 505 H290"/>
+    <path d="M290 585 H105"/>
+  </g>
+  <g fill="#0f172a" font-family="sans-serif" font-size="15">
+    <text x="145" y="165">注文確定</text>
+    <text x="330" y="225">POST /orders</text>
+    <text x="515" y="285">authorize</text>
+    <text x="515" y="375">approved / timeout</text>
+    <text x="650" y="435">成功時のみ保存</text>
+    <text x="335" y="495">201 または 504</text>
+    <text x="150" y="575">完了または再試行案内</text>
+  </g>
+  <rect x="395" y="325" width="350" height="280" rx="12" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="410" y="345" fill="#475569" font-family="sans-serif" font-size="15">成功 / timeout の分岐</text>
+  <text x="40" y="630" fill="#475569" font-family="sans-serif" font-size="16">各参加者の責任と、成功・失敗で異なる応答を時系列で確認する。</text>
+</svg>

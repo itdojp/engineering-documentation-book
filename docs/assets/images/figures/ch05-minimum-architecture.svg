@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title-ch05-minimum-architecture desc-ch05-minimum-architecture">
+  <title id="title-ch05-minimum-architecture">MiniShopの最小構成</title>
+  <desc id="desc-ch05-minimum-architecture">インターネット上の利用者、社内VPCのWebフロント、Orders API、DB、ログとメトリクス、社外の決済プロバイダを境界別に配置し、HTTPSなどの通信方向を示す。</desc>
+  <defs>
+    <marker id="arrow-ch05-minimum-architecture" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="960" height="520" fill="#ffffff"/>
+  <text x="40" y="40" fill="#0f172a" font-family="sans-serif" font-size="26" font-weight="700">MiniShopの最小構成</text>
+  <rect x="40" y="75" width="180" height="360" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="60" y="110" fill="#1e3a8a" font-family="sans-serif" font-size="18" font-weight="700">インターネット</text>
+  <rect x="70" y="210" width="120" height="70" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="252" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="18">利用者</text>
+
+  <rect x="270" y="75" width="430" height="360" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="290" y="110" fill="#14532d" font-family="sans-serif" font-size="18" font-weight="700">社内 / VPC</text>
+  <rect x="310" y="150" width="150" height="64" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="385" y="188" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="17">Webフロント</text>
+  <rect x="500" y="150" width="150" height="64" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="575" y="188" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="17">Orders API</text>
+  <rect x="500" y="280" width="150" height="64" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="575" y="318" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="17">DB</text>
+  <rect x="310" y="330" width="150" height="64" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="385" y="358" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">ログ /</text>
+  <text x="385" y="380" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">メトリクス</text>
+
+  <rect x="750" y="75" width="170" height="360" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="770" y="110" fill="#7c2d12" font-family="sans-serif" font-size="18" font-weight="700">社外</text>
+  <rect x="775" y="210" width="120" height="70" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="2"/>
+  <text x="835" y="240" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">決済</text>
+  <text x="835" y="262" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">プロバイダ</text>
+
+  <g fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow-ch05-minimum-architecture)">
+    <path d="M190 245 H310"/>
+    <path d="M460 182 H500"/>
+    <path d="M575 214 V280"/>
+    <path d="M650 182 C705 182 720 245 775 245"/>
+    <path d="M500 198 C455 240 430 285 410 330"/>
+  </g>
+  <g fill="#475569" font-family="sans-serif" font-size="14">
+    <text x="228" y="232">HTTPS</text>
+    <text x="463" y="170">HTTPS</text>
+    <text x="687" y="210">HTTPS</text>
+    <text x="448" y="275">監視</text>
+  </g>
+  <text x="40" y="482" fill="#475569" font-family="sans-serif" font-size="16">境界・主要通信・データ保管・ログ出口だけを示し、詳細は注釈へ分離する。</text>
+</svg>

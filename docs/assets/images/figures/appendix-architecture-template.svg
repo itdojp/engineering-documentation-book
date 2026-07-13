@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title-appendix-architecture-template desc-appendix-architecture-template">
+  <title id="title-appendix-architecture-template">構成図テンプレート</title>
+  <desc id="desc-appendix-architecture-template">社外利用者、社内VPCの入口、アプリ、認証認可、DB、ログ、監視ログ基盤を境界別に配置し、通信とログ転送の方向を示す。</desc>
+  <defs>
+    <marker id="arrow-appendix-architecture-template" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#ffffff"/>
+  <text x="40" y="40" fill="#0f172a" font-family="sans-serif" font-size="26" font-weight="700">構成図テンプレート</text>
+  <rect x="40" y="80" width="180" height="380" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="60" y="115" fill="#1e3a8a" font-family="sans-serif" font-size="18" font-weight="700">社外</text>
+  <rect x="70" y="225" width="120" height="70" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="267" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="18">利用者</text>
+
+  <rect x="270" y="80" width="430" height="380" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="290" y="115" fill="#14532d" font-family="sans-serif" font-size="18" font-weight="700">社内 / VPC</text>
+  <g fill="#fff" stroke="#16a34a" stroke-width="2">
+    <rect x="305" y="155" width="140" height="64" rx="10"/>
+    <rect x="510" y="155" width="140" height="64" rx="10"/>
+    <rect x="305" y="285" width="140" height="64" rx="10"/>
+    <rect x="510" y="285" width="140" height="64" rx="10"/>
+    <rect x="410" y="375" width="140" height="58" rx="10"/>
+  </g>
+  <g fill="#0f172a" font-family="sans-serif" font-size="16" text-anchor="middle">
+    <text x="375" y="182">入口</text><text x="375" y="204">LB / Gateway</text>
+    <text x="580" y="194">アプリ</text>
+    <text x="375" y="312">認証 /</text><text x="375" y="334">認可</text>
+    <text x="580" y="324">DB</text>
+    <text x="480" y="410">ログ</text>
+  </g>
+
+  <rect x="750" y="80" width="170" height="380" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="770" y="115" fill="#4c1d95" font-family="sans-serif" font-size="18" font-weight="700">監視基盤</text>
+  <rect x="775" y="225" width="120" height="70" rx="10" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="835" y="255" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">ログ</text>
+  <text x="835" y="277" text-anchor="middle" fill="#0f172a" font-family="sans-serif" font-size="16">集約</text>
+
+  <g fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow-appendix-architecture-template)">
+    <path d="M190 260 H305"/>
+    <path d="M445 187 H510"/>
+    <path d="M560 219 C500 245 430 255 390 285"/>
+    <path d="M580 219 V285"/>
+    <path d="M550 390 C650 360 690 260 775 260"/>
+  </g>
+  <g fill="#475569" font-family="sans-serif" font-size="14">
+    <text x="225" y="247">HTTPS</text>
+    <text x="455" y="174">処理</text>
+    <text x="436" y="250">認証 / 認可</text>
+    <text x="642" y="332">ログ転送</text>
+  </g>
+  <text x="40" y="510" fill="#475569" font-family="sans-serif" font-size="16">自システムに合わせて境界名と各箱を置き換え、通信・認証・保管・監視の責任を注記する。</text>
+</svg>

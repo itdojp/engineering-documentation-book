@@ -66,6 +66,11 @@ flowchart LR
   API --> Obs
 ```
 
+<figure class="book-figure" id="figure-ch05-minimum-architecture">
+  <img src="../../assets/images/figures/ch05-minimum-architecture.svg" alt="利用者、社内VPCのWeb・API・DB・ログ、社外の決済プロバイダを境界別に示した最小構成図" loading="lazy">
+  <figcaption>図5-1: MiniShopの最小構成。社内・社外の境界、主要通信、ログ出口を一枚で確認する。</figcaption>
+</figure>
+
 注釈（最低限）:
 
 - 境界（社内/社外、VPC など）
@@ -82,6 +87,11 @@ flowchart TD
   C -->|成功| D[注文確定（DB 保存）]
   C -->|失敗/timeout| F[再試行案内 or 失敗通知]
 ```
+
+<figure class="book-figure" id="figure-ch05-order-flow">
+  <img src="../../assets/images/figures/ch05-order-flow.svg" alt="注文確定から入力検証、決済、保存またはエラー通知へ分岐する処理フロー" loading="lazy">
+  <figcaption>図5-2: 注文処理の最小フロー。正常系と入力不備・決済失敗の分岐を分けて示す。</figcaption>
+</figure>
 
 #### シーケンス（最小）
 
@@ -108,11 +118,16 @@ sequenceDiagram
   end
 ```
 
+<figure class="book-figure" id="figure-ch05-order-sequence">
+  <img src="../../assets/images/figures/ch05-order-sequence.svg" alt="利用者、Web、Orders API、決済プロバイダ、DB間の注文処理を時系列で示すシーケンス図" loading="lazy">
+  <figcaption>図5-3: 注文処理の最小シーケンス。成功時とtimeout時の応答差を時系列で確認する。</figcaption>
+</figure>
+
 ### Mermaid の表示方針
 
-- 本書では Mermaid 図を「コピペして使える」ことを優先し、コードブロックとして提示する
-- GitHub Pages 向けのページには Mermaid 描画（JS レンダリング）を同梱していないため、図はコードとして表示される
-- レンダリングが必要な場合は GitHub の Markdown 表示、VS Code 拡張、Mermaid Live Editor などに貼り付けて確認する
+- 本書では、再利用できるMermaidソースをコードブロックとして保持し、その直後に公開用の静的SVGプレビューを併記する
+- GitHub Pages向けのページはMermaid JavaScriptに依存せず、静的SVGで同じ構造を確認できる
+- ソースを編集して再レンダリングする場合は、GitHubのMarkdown表示、VS Code拡張、Mermaid Live Editorなどで確認する
 
 ## チェックリスト
 
