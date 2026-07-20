@@ -25,6 +25,7 @@ order: 80
 ### テンプレ
 
 - 付録: [ADR テンプレ](../../appendices/templates/adr/)
+- 完成例: [MiniShop ADR](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/adr-0001-validation.md)
 
 ### 記入例（要点）
 

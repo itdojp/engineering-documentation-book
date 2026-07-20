@@ -25,6 +25,7 @@ order: 70
 ### テンプレ
 
 - 付録: [Runbook テンプレ](../../appendices/templates/runbook/)
+- 完成例: [MiniShop Runbook](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/runbook.md)
 
 ### 記入例（要点）
 

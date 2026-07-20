@@ -48,6 +48,17 @@ const expectedModules = {
   legalNotice: false,
   glossary: true
 };
+const minishopSnapshotCommit = '48211ed133bd8480807b65274240f0cddd8b9000';
+const minishopSnapshotBase = 'https://github.com/itdojp/engineering-documentation-book';
+const minishopLinks = [
+  ['docs/appendices/templates/index.md', 'blob', 'README.md'],
+  ['docs/appendices/templates/index.md', 'tree', ''],
+  ['docs/chapters/chapter-06/index.md', 'blob', 'procedure-deploy.md'],
+  ['docs/chapters/chapter-07/index.md', 'blob', 'runbook.md'],
+  ['docs/chapters/chapter-08/index.md', 'blob', 'adr-0001-validation.md'],
+  ['docs/chapters/chapter-09/index.md', 'blob', 'incident-report-2026-02-15.md'],
+  ['docs/chapters/chapter-09/index.md', 'blob', 'postmortem-2026-02-15.md']
+];
 
 function read(file) {
   try {
@@ -186,6 +197,24 @@ for (const sourceFile of ['docs/chapters/chapter-05/index.md', 'docs/appendices/
 }
 
 const allMarkdown = markdown.map(function (pair) { return pair[1]; }).join('\n');
+for (const [sourceFile, linkType, exampleFile] of minishopLinks) {
+  const suffix = exampleFile ? '/' + exampleFile : '';
+  const expectedLink = minishopSnapshotBase + '/' + linkType + '/' + minishopSnapshotCommit + '/examples/minishop' + suffix;
+  expect(count(read(sourceFile), expectedLink) === 1,
+    sourceFile + ': expected exactly one versioned MiniShop link ' + expectedLink);
+}
+const minishopLinkPattern = /https:\/\/github\.com\/itdojp\/engineering-documentation-book\/(?:blob|tree)\/([0-9a-f]{40}|main)\/examples\/minishop(?:\/[A-Za-z0-9._-]+)?/g;
+const minishopCommits = Array.from(allMarkdown.matchAll(minishopLinkPattern), function (match) { return match[1]; });
+expect(minishopCommits.length === minishopLinks.length,
+  'public source must contain exactly ' + minishopLinks.length + ' MiniShop reader links, got ' + minishopCommits.length);
+expect(minishopCommits.every(function (commit) { return commit === minishopSnapshotCommit; }),
+  'MiniShop reader links must use the single audited commit ' + minishopSnapshotCommit);
+const templateIndex = read('docs/appendices/templates/index.md');
+expect(templateIndex.includes('本公開版 `v' + config.version + '`') &&
+  templateIndex.includes('将来の最新版との差分が生じる可能性もある'),
+  'templates index: MiniShop version and future-difference notice are required');
+expect(!allMarkdown.includes('/tree/main/examples/minishop') && !allMarkdown.includes('/blob/main/examples/minishop'),
+  'public source must not link to mutable main for MiniShop examples');
 const figureRouteSources = [
   read('docs/chapters/chapter-05/index.md'),
   read('docs/appendices/templates/architecture-diagram/index.md'),
@@ -263,4 +292,5 @@ if (errors.length) {
   for (const error of errors) console.error('- ' + error);
   process.exit(1);
 }
-console.log('Reader UX check passed: ' + figures.length + ' Mermaid sources, SVG previews, anchors and index entries.');
+console.log('Reader UX check passed: ' + figures.length + ' Mermaid sources and ' +
+  minishopLinks.length + ' versioned MiniShop links, with required navigation contracts.');

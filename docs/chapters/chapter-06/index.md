@@ -24,6 +24,7 @@ order: 60
 ### テンプレ
 
 - 付録: [手順書テンプレ](../../appendices/templates/procedure/)
+- 完成例: [MiniShop デプロイ手順書](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/procedure-deploy.md)
 
 ### 記入例（要点）
 
