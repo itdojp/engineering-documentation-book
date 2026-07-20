@@ -33,14 +33,14 @@ function extractTemplatePackage(text) {
   const remainder = text.slice(headingIndex + heading.length);
   const nextHeadingIndex = remainder.search(/\r?\n###\s/);
   const section = nextHeadingIndex === -1 ? remainder : remainder.slice(0, nextHeadingIndex);
-  const fence = section.match(/```json\s*\r?\n([\s\S]*?)\r?\n```/);
-  if (!fence) {
-    errors.push(`${TEMPLATE_PATH}: package.json example must contain one JSON code block`);
+  const fences = Array.from(section.matchAll(/```json\s*\r?\n([\s\S]*?)\r?\n```/g));
+  if (fences.length !== 1) {
+    errors.push(`${TEMPLATE_PATH}: package.json example must contain exactly one JSON code block; found ${fences.length}`);
     return null;
   }
 
   try {
-    return JSON.parse(fence[1]);
+    return JSON.parse(fences[0][1]);
   } catch (error) {
     errors.push(`${TEMPLATE_PATH}: package.json example is invalid JSON (${error.message})`);
     return null;

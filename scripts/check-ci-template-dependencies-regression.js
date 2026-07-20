@@ -16,6 +16,7 @@ const cases = [
   ['canonical dependency drift', 'package.json', (text) => text.replace(/("markdown-link-check":\s*)"[^"]+"/, '$1"^0.0.0"')],
   ['missing template dependency', TEMPLATE_PATH, (text) => text.replace(/^\s*"markdownlint-cli":\s*"[^"]+",\r?\n/m, '')],
   ['malformed template package', TEMPLATE_PATH, (text) => text.replace('"name": "docs-quality-gate",', '"name": "docs-quality-gate"')],
+  ['duplicate template package block', TEMPLATE_PATH, (text) => text.replace('\n```\n\n### `.markdownlint.json`', '\n```\n\n```json\n{}\n```\n\n### `.markdownlint.json`')],
 ];
 
 function createFixture() {
