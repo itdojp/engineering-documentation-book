@@ -21,11 +21,14 @@ order: 900
 
 参考: <https://itdojp.github.io/security-privacy-literacy-book/>
 
-## 完成形の実例（examples/）
+## 完成形サンプル（MiniShop）
 
-テンプレを埋めた完成形の一式は、リポジトリの `examples/` にまとめると、横断で参照しやすい。
+テンプレを埋めた完成形の一式を、同じ架空システム MiniShop の文書として確認できる。本公開版 `v0.1.0` では、本文と同じ内容で確認した commit `48211ed133bd8480807b65274240f0cddd8b9000` を固定スナップショットとする。
 
-- 例（MiniShop）: <https://github.com/itdojp/engineering-documentation-book/tree/main/examples/minishop>
+- [MiniShop 完成形サンプルの目次](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/README.md)
+- [MiniShop のファイル一覧](https://github.com/itdojp/engineering-documentation-book/tree/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop)
+
+固定スナップショットは、この公開版を読んでいる間にリンク先の内容が変わることを防ぐ。将来の最新版との差分が生じる可能性もある。新しい版では本文とサンプルを同時に確認し、固定 commit を更新する。
 
 ## 目次
 

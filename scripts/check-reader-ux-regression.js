@@ -54,6 +54,15 @@ const cases = [
   ['absolute CSS SVG resource', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('</svg>', '<rect fill="url(https://example.invalid/paint.svg#paint)"/></svg>'); }],
   ['CSS import resource', 'docs/assets/images/figures/ch05-order-flow.svg', function (text) { return text.replace('</svg>', '<style>@import "other.css";</style></svg>'); }],
   ['hard-coded Pages baseurl', 'docs/appendices/figure-index/index.md', function (text) { return text.replace('../../chapters/chapter-05/', '/engineering-documentation-book/chapters/chapter-05/'); }],
+  ['mutable MiniShop snapshot', 'docs/appendices/templates/index.md', function (text) { return text.replace(/tree\/[0-9a-f]{40}\/examples\/minishop/, 'tree/main/examples/minishop'); }],
+  ['missing chapter MiniShop route', 'docs/chapters/chapter-06/index.md', function (text) { return text.replace('/procedure-deploy.md)', '/procedure-deploy-missing.md)'); }],
+  ['mixed MiniShop snapshot commit', 'docs/chapters/chapter-07/index.md', function (text) { return text.replace(/blob\/[0-9a-f]{40}\/examples\/minishop\/runbook\.md/, 'blob/0000000000000000000000000000000000000000/examples/minishop/runbook.md'); }],
+  ['missing MiniShop difference notice', 'docs/appendices/templates/index.md', function (text) { return text.replace('将来の最新版との差分が生じる可能性もある', '最新版を参照する'); }],
+  ['stale MiniShop version notice', 'book-config.json', function (text) {
+    const config = JSON.parse(text);
+    config.version = String(config.version) + '-stale-fixture';
+    return JSON.stringify(config, null, 2) + '\n';
+  }],
   ['broken mobile rule', 'docs/assets/css/mobile-responsive.css', function (text) { return text.replace(/\.figure-index-list\s+li\s*\{\s*padding:\s*0\.75rem;/, '.broken-index li {\n    padding: 0.75rem;'); }],
   ['broken sidebar renderer', 'docs/_includes/sidebar-nav.html', function (text) { return text.replaceAll('navigation.appendices', 'navigation.resources_only'); }],
   ['broken prev-next renderer', 'docs/_includes/page-navigation.html', function (text) { return text.replace('additional,resources,appendices,afterword', 'additional,resources,afterword'); }]

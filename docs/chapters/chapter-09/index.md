@@ -37,6 +37,8 @@ order: 90
 
 - 付録: [障害報告テンプレ](../../appendices/templates/incident-report/)
 - 付録: [ポストモーテムテンプレ](../../appendices/templates/postmortem/)
+- 完成例: [MiniShop 障害報告](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/incident-report-2026-02-15.md)
+- 完成例: [MiniShop ポストモーテム](https://github.com/itdojp/engineering-documentation-book/blob/48211ed133bd8480807b65274240f0cddd8b9000/examples/minishop/postmortem-2026-02-15.md)
 
 ### 記入例（要点）
 
