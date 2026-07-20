@@ -39,6 +39,8 @@ jobs:
 
 ### `package.json`（例）
 
+以下の依存関係のバージョン範囲は、本書の `package.json` で検証している値を掲載する。正本の依存を更新した場合はこの例も同じ PR で更新し、`npm test` の `check:ci-template-dependencies` で一致を確認する。
+
 ```json
 {
   "name": "docs-quality-gate",
@@ -49,8 +51,8 @@ jobs:
     "check-links": "find docs -name '*.md' -print0 | xargs -0 -n 1 markdown-link-check -c .markdown-link-check.json"
   },
   "devDependencies": {
-    "markdownlint-cli": "^0.45.0",
-    "markdown-link-check": "^3.13.7"
+    "markdownlint-cli": "^0.48.0",
+    "markdown-link-check": "^3.14.2"
   }
 }
 ```
